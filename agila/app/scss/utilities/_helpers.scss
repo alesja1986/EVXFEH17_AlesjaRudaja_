@@ -1,0 +1,13 @@
+
+@include respond-to('medium'){
+    /// Placeholder for images in section
+    %imagesection{
+        grid-column: span 1;
+        
+        
+        & img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
