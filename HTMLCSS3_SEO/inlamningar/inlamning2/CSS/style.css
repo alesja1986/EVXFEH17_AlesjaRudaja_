@@ -1,0 +1,161 @@
+/* 
+*I den universiella selektorn använder jag av mig border-box för att beräkningen ska tas både
+inerhållet och padding/ram. 
+*Margin och padding är satta på 0 för att återställa webbläsarens margin/padding grundinställningar.
+*/
+*{  
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+  }
+
+/* 
+*I body anger jag vilka egenskaper ska sidans body ha. färgen,storlek samt positionen.
+*/
+  body{
+       width:100%;
+       max-width:50em; /*50em är lika 800px*/ 
+       margin:auto;
+       background: #F8FBEC;
+       -webkit-font-smoothing: antialiased;
+       font-family: 'Varela Round', sans-serif;
+       background-image: url("pictures/bird_bluesky.jpg");
+  }
+
+/*tar bort punkterna från alla ul*/
+  ul{
+    list-style-type:none; 
+  }
+
+/* Tog bord decorationen (understräck) på länkar och
+ändrade färgen till grå när man hoovrar över dom*/
+a:link {
+    text-decoration: none;   
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color:#555; 
+}
+
+a:active {
+    text-decoration: none;
+}
+
+/*Navigation där satte färgen samt ändra så att nav länkar ska placeras i mitten */
+nav{
+    text-align: center; 
+    height:40px;
+	width:804px;/*beror på vilken bredd man satt på de enskilda li, i detta fall är de 4 li*200px+margin-right på 1px*/ 
+	display:block;
+	margin:0 auto; /*centrar ul inuiti*/
+    text-transform: uppercase; 
+
+  }
+/*Nav länkar ska ha padding på 2em samt vara placerad i linjen*/
+nav ul li { 
+    display:inline;
+    float:left;/*gör att den flyter till vänster (bättre att göra detta med flexbox)*/
+	width:200px;
+	height:40px;
+	line-height: 20px;
+	background:skyblue;
+    margin-right:1px;
+        
+}
+nav ul ul li{
+	position:relative; /* sätter positionen till vara relativt till sin behållare*/
+    display:none; /*Döljer undermenyna*/
+    opacity: 0.9; /* */
+}
+
+nav a{ 
+ font-weight: bold;
+ font-size:10pt;
+ color:#112233;
+}
+
+/*Döljer submenyn i dropdown*/
+nav ul ul ul{
+	display:none;
+}
+
+nav ul ul li:hover ul{
+	display:block;
+	position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+	width:200px; /*samma som ul li*/
+	left:200px; /*absolute position 200px ifrån sin förälder*/
+	top:0px; /*absolute position högst mot sin förälder*/  
+}
+/*Visar dropdown vid hover på ul li*/
+nav ul li:hover ul li{
+	     display: block; 
+}
+/* Här använder jag adjacent sibling selector som siktar på <h3> 
+som är direkt efter <h2>*/
+h2+h3{
+    color: greenyellow;
+  }
+
+/*Här staylar jag artiklar med färger , border samt lägger till margin*/
+article{ background-color:slategray;
+         margin: 1em;
+         border-bottom-style:solid;
+         border-bottom-color: purple;      
+}
+
+/* färgar texten i articklar, samt ändrar padding/margin */
+article a,p {
+           color:whitesmoke;
+           padding: 0.5em;
+           margin-bottom: 0.5em;
+}
+/* Staylar artiklarnas rubriker*/
+article h3 { padding: 0.5em;
+            text-align: center;
+            color: purple;
+}
+
+/* descendant selectors
+Denna regel riktar sig enbart på li inom .blog_summary klassen, och inte andra 
+eventuella li inom html filen, och man läser av regeln från höger
+till vänster, så i detta fall, all <li> som befinner sig i en .blog_summary klassen
+Denna regel kommer inte påverka några andra <li> element på sidan.
+*/
+.blog_summary li{ margin: 0.5em;
+                  padding: 0.5em;               
+}
+
+/* child selectors 
+Regeln siktar sig in på alla spam som befinner sig i en klass som heter 
+.blog_summary  och gör texten gul färgad
+*/
+.blog_summary>span{
+    color:yellow;
+  }
+
+  /*Psuedo selector
+  Alla länkar i klassen .blog_summary ska blir röda när man tar muspekaren över den*/
+.blog_summary a:hover {
+ color:red;
+}
+/* style for  klass .blog_summary*/
+.blog_summary{
+    text-align: center;
+    background:lightgray;
+    margin: 1em;
+}
+
+ /*Använder här The general sibling selector , klassens web färgen blir vit*/
+.tel ~ .web{
+   color:white;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 0.5em;
+}

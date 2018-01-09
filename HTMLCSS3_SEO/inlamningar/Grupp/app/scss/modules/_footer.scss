@@ -1,0 +1,43 @@
+/*-----------Mobile Footer-----------*/
+
+footer {
+  background-color:$blue2;
+  max-width:40em;
+  margin:1em auto;
+}
+footer .contact {
+  color:white;
+  text-align:center;
+  padding:1em;
+}
+.contact .span1 {
+  font-weight:bold;
+  font-size:125%;
+  line-height:50px;
+}
+.contact p {
+  font-size:110%;
+  margin-bottom:10px;
+}
+.contact p,
+.contact .span2 {
+  display:block;
+  padding:5px;
+}
+.contact .fa {
+  font-size:165%;
+  margin-right:10px;
+  margin-left:10px;
+  margin-top:10px;
+}
+
+/*-----------Desctop Footer-----------*/
+
+@include respond-to('medium') { 
+
+footer {
+  display:flex;
+  max-width:46em;
+  width:45em;
+}
+}

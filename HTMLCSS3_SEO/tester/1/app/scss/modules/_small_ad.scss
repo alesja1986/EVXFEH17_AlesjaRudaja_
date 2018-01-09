@@ -1,0 +1,16 @@
+.small_ad{
+    border: thick solid#000000;
+    border-width: 1px;
+    margin:0.5em;
+    text-align: center;   
+}
+
+.small_ad h3{
+font-style: italic;
+}
+
+.small_ad a {
+    text-decoration: none;
+    color:map-get($color, bright);
+    margin:0.1em;
+}

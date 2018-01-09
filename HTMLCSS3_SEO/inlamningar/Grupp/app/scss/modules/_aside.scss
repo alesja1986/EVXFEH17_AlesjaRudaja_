@@ -1,0 +1,43 @@
+/*-----------Mobile Aside-----------*/
+
+aside {
+  background-color:$blue3;
+  max-width:40em;
+  padding:1em;
+  text-align: center;
+  margin:1em auto;
+}
+aside h2 {
+  background-color:$blue4;
+  color:white;
+  margin-bottom:10px;
+}
+aside p {
+  font-size:120%;
+  color:white;
+  margin-bottom:10px;
+}
+aside .span0 {
+  display:block;
+  color:white;
+  font-size:130%;
+  background-color:$blue4;
+}
+
+/*-----------Desctop Aside-----------*/
+
+@include respond-to('medium') { 
+
+aside {
+  display:flex;
+  max-width:46em;
+  width:45em;
+}
+
+.contact{
+  @include circle(170px);
+  background-color: red;
+  text-align: center;
+  z-index: 8;
+}
+}

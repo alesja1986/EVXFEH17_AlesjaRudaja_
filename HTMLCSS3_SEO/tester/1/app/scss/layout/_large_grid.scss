@@ -1,0 +1,39 @@
+
+/*Styling Grids Breakpoint 840px*/
+
+/*Breakpoint large*/
+@supports (grid-area: auto) {
+    @include respond-to("large") { /*using my own breakingpoint variable from breakingpoints*/
+    .container {
+        display: grid;
+        grid-template: auto / repeat(10,1fr);
+        margin:auto;
+    }
+    .small_ad {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .article_header {
+        grid-column: 3/11;
+        grid-row: 1/2;
+    }
+    .article_body {
+        grid-column: 8/11;
+        grid-row: 2/3;
+        align-self: left; /*makes the content responsive*/
+    }
+    .bg_block {
+        grid-column:1/8;
+        grid-row:2/3;
+    }
+    .community {
+        grid-column: 1/11;
+        grid-row: 3/4;
+  
+    }
+    .footer {
+        grid-column: 1/11;
+        grid-row: 4/5;
+    }
+    }
+    }

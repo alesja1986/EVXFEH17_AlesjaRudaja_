@@ -1,0 +1,280 @@
+*{  
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+    list-style: none;  
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Oranienbaum', serif;
+    background-color:#DF5A5C;
+}
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+.main-navigation{
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    width: 90%;
+    text-transform:uppercase;
+    background-color: white;
+   margin: 1em;
+  }
+  
+  ul{
+    margin:0;
+    padding:0;
+  }
+  
+  .menu{
+    display:flex;  
+    flex-direction:column;
+   
+  }
+    li{
+      display:block;
+      list-style-type:none;
+      text-transform:uppercase;
+    }
+    
+    li a{
+      display:flex;
+      text-align:center;
+      text-decoration:none;
+      color:#777;
+    }
+    
+    li a:hover{
+      color:#fff;
+      background-color: #F39F9F;
+    }
+  
+  /* Menys flex firektion är row när det blir över 800px*/
+  @media (min-width: 800px) {
+  
+      .menu{
+        flex-direction:row;
+        justify-content:space-between;
+        justify-content: flex-end;
+       
+      }
+  }
+  
+  nav ul ul {
+      display: none;
+  }
+  
+
+    nav ul ul {
+      display: none;
+      position:absolute;
+    }
+
+  
+  nav ul li:hover > ul {
+    display:block;
+    color:#fff;
+    padding-left:4rem;
+  }
+  
+    nav ul li:hover > ul {
+      padding-left:0;
+      background:#777;
+    }
+    
+    nav ul li:hover > ul a{
+      color:#fff;
+    }
+
+      .sub-menu ul li li{
+        display:flex;
+        padding-left:5em;
+      }
+      
+    
+  
+  
+  
+
+
+
+/*Container som innerhåller alla boxar ska vara flex */
+.container{
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap; 
+    margin-top:5em;/*alla ska vara wrap och hamna på ny rad ifall inte finns tillräckligt plats*/     
+}
+
+  /*alla a element i container (varje box) style*/
+.container a{
+height:auto; /*div blir anpassad efter innerhållet*/
+margin:0.7em;
+background-color: white; 
+border: 1px solid #FF5F00;
+}
+
+ /*alla bilder får ett bestämd bredd*/
+.little-pics img{
+    width: 100%;
+    max-width: 350px;
+	height: auto;
+}
+
+ /*vid hover får bilden border samt skugga*/
+.little-pics:hover,
+.little-pics:focus{
+    border-top: 2px solid #FF5F00;
+    border-bottom: 2px solid #FF5F00;;
+    transition: all .4s;
+    box-shadow: 2px 2px 4px grey;
+}
+
+ /*texten ska hamna mitten samt ha styling*/
+h3{
+    text-align: center;
+    font-size: 30px; 
+    color: white;
+    background-color: #5D5454;   
+}
+
+/*varje h3 första bokstav ska ha styling*/
+h3::first-letter {
+    font-size: 140%;
+    color:#FF5F00;   
+}
+
+footer{
+    background-color: #FFFFFF;
+    height: 30px;
+}
+
+
+@media screen and (min-width: 50em) {
+ 
+/*stänga öppna knapp är osynlig efter denna brytpunkten*/
+ label{
+      display: none;
+ }
+
+
+nav {
+width: 100%;
+margin-top: 2em;
+padding-right:5em;
+text-align: right;
+height: 30px;
+ 
+}
+
+nav ul li{
+  display: flex;
+  display: inline;
+font-size: 20px;
+}
+
+nav a{
+  padding:0.5em;
+  color:#5D5454;
+  text-transform: uppercase;
+}
+
+   /*alla bilder får ett bestämd bredd*/
+.little-pics img{
+    width: 100%;
+    min-height:250px;
+    }
+   
+ /*sista boxen ska bli större*/
+.box7{
+    width: 900px;
+    justify-content: center;
+}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+Mobile view styling
+--------------------------------------------------------------*/
+
+
+#nav-toggle:checked + #wrapper nav {
+    display:block; 
+    position:absolute; /*sÃ¤tte absolut sÃ¥ att artiklar hamnar under naven och inte nedanfÃ¶r*/
+  }
+
+  #nav-toggle:not(:checked) + #wrapper nav {
+    display:none; 
+  }
+  
+
+/* ===================================================================== 
+   CSS Grid Layout
+======================================================================== */
+@supports (grid-area:auto) {
+    
+       
+  
+
+@media screen and (min-width: 90em) {
+
+/*container som innerhåller alla grids*/
+.container{
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: auto;
+    grid-gap:10px; 
+    grid-template-areas:
+    "box1  box2 box2 box3"
+    "box4 box2 box2 box5"
+    "box6 box6 box7 box5"
+}
+  
+  /*ger varje selector grid area namn */
+  .box1 {grid-area: box1;}
+  .box2 {grid-area: box2;}
+  .box3 {grid-area: box3;}
+  .box4 {grid-area: box4;}
+  .box5 {grid-area: box5}
+  .box6 {grid-area:box6;}
+  .box7 { grid-area: box7;}
+   footer {grid-area: footer;}
+
+/*ändrar storlek till auto då innan var det ett bestämd storlek på den*/
+.box7{
+    width: auto;
+    justify-content: center;
+}
+ /*vid hover får bilden border samt skugga*/
+ .little-pics:hover,
+ .little-pics:focus{
+     border-top:none;
+     border-bottom:none;
+     transition: all .4s;
+     box-shadow: 2px 2px 4px grey;
+ }
+ img{
+     width: auto;
+     height: auto;
+ }
+}
+ }
+                    

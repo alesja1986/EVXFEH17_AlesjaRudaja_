@@ -1,0 +1,89 @@
+/*-----------Mobile Cards-----------*/
+
+.cards {
+  max-width:40em;
+  margin:1em auto;
+}
+.cards a {
+  display:block;
+  margin-bottom:1em;
+}
+.para { 
+  padding:0.5em;
+  font-size:150%;
+  color:white;
+  background-color:#000000;
+}
+.para .blue {
+  font-style:italic;
+  color:$blue1;
+}
+section img {
+  display:block;
+  border:0;
+  width:100%;
+  height:auto;
+}
+.tex {
+  text-align:center;
+  background-color:$blue1;
+}
+.tex:nth-child(5) {
+  background-color:$blue2;
+}
+.tex:nth-child(6) {
+  background-color:$blue3;
+}
+.tex:nth-child(8) {
+  background-color:$blue4;
+}
+.tex .fa {
+  color:white;
+  padding-top:50px;
+  font-size:250%;
+}
+.tex p {
+  color:white;
+  padding-top:10px;
+  padding-bottom:50px;
+  font-size:150%;    
+}
+
+/*-----------Desktop Cards-----------*/
+
+@include respond-to('medium') { 
+
+.cards {
+  display:flex;
+  flex-flow:row wrap;
+  max-width:46em;
+  width:45em;
+} 
+.double:nth-child(1) {
+  width:25em;
+  text-align:center;
+  margin-right:1em;
+  padding-top:60px;
+  background-color:black;
+  margin-bottom:1em;
+}
+.pic { 
+  width:19em;
+}
+.tex:nth-child(3n) {
+  width:12em;
+  margin-right:1em;
+  margin-bottom:1em;
+}
+.tex:nth-child(3n+5) {
+  width:12em;
+  margin-left:1em;
+  margin-bottom:1em;
+}
+.double:nth-child(11) {
+  width:12em;
+  margin-left:1em;
+  background-color:black; 
+  margin-bottom:1em;
+}
+}

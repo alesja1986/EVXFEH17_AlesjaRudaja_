@@ -1,0 +1,15 @@
+.article_body{
+ margin:0.6em;
+}
+
+.article_body a{
+   text-decoration: none;
+   color:map-get($color, dark);
+   }
+
+.article_body h4 {
+     border: thick solid#000000;
+   border-width: 1px;
+   text-align: center;
+   padding: 0.5em;
+}

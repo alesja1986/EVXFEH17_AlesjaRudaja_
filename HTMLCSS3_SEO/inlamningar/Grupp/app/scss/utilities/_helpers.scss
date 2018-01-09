@@ -1,0 +1,26 @@
+/*-----------Hover effect-----------*/
+
+%effect {
+  font-weight:bold;
+  border-radius:5px;
+}
+section .double {
+@extend %effect;
+  &:hover {
+    background:#00ADEF;
+  }
+}
+section .tex {
+  @extend %effect;
+  background:lightblue;
+  &:hover {
+    filter: opacity(50%);
+  }
+}
+section .pic {
+  @extend %effect;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+  }
+}

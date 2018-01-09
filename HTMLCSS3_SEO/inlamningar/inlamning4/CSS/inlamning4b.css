@@ -1,0 +1,335 @@
+
+/* 
+*I den universiella selektorn använder jag av mig border-box för att beräkningen ska tas både
+inerhållet och padding/ram. 
+*Margin och padding är satta på 0 för att återställa webbläsarens margin/padding grundinställningar.
+*/
+*{  
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration:none;
+}
+
+body{
+    margin:0 auto;
+    width:100%;
+}
+
+
+/*----------->* KODEN FÖR NAVIGATION DEL I MOBIL VIEW <-------------*/
+
+
+
+
+/*style på nav's label*/
+label{ 
+    display: flex;
+    line-height: 40px;
+    font-size:2em;
+    cursor:pointer;
+  }
+
+/*Dold checkbox som aldrig visas*/
+#nav-toggle { 
+    display: none; 
+} 
+
+/*Avänds för att dölja och visa menyn på mobilen*/ 
+#nav-toggle:checked + #wrapper nav {
+    display: none; 
+}
+
+/*ikoner som är högs upp placering */
+.logo{ 
+     display: flex;  
+     align-items: baseline; /*för att h1-h2 ska hamna på samma linje*/
+     justify-content:center; /*ska placeras mitten*/
+}
+
+/*färgerna på navigationens listor*/
+.box1 { background:#1abc9c;}
+.box2 { background:#3498db;}
+.box3 { background:#9b59b6;}
+.box4 { background:#34495e;}
+.box5 { background:#f1c40f;}
+.search-form{background-color: orange;}
+
+/*style för font-iconer som ligger i head delen */
+.fa-smile-o,
+.fa-diamond,
+.fa-bed,
+.fa-bath,
+.fa-steam,
+.logo .fa-facebook-official,
+.logo .fa-instagram,
+.logo .fa-youtube-square,
+.logo .fa-twitter{
+color: #FFFFFF;
+padding-right:1em;
+font-size:2.5em;
+}
+
+/*färger och postition för övresta ikoner*/
+.logo .fa-youtube-square{
+        color: red;
+        padding-left: 0.1em;
+        margin-right:-0.6em;
+}
+.logo .fa-facebook-official{
+        color: #94B1EC;
+        margin-right:-0.6em;
+}
+.logo .fa-instagram{
+        color: #80500F;
+        font-weight: bold;
+        margin-right:-0.6em;
+}
+.logo .fa-twitter{
+       color: #215EDC;
+       margin-right:-0.8em;
+}
+
+/*Style för  nav listor*/
+nav ul{
+display: flex;
+flex-flow: column wrap; /*alla ska vara i rad wrap*/
+font-size:2.5em; /*font storlek på navigations listor*/
+width: auto; 
+text-align: center; /*listor placeras i mitten*/
+text-shadow:4px 4px 0 rgba(0,0,0,0.1);
+}
+
+nav a{color:white;}
+
+ /*style för söknings rutan*/
+.search-form {
+        background-color:#e67e22;
+        order: -1; /* hamnar övanför andra */
+        font-size: 15px;
+        padding-top: 1em;
+    }
+
+/*style för input rutan*/
+input {
+        width: 50%; /*ska vara 50%bredd*/
+        background-color:#e67e22;
+        color:white;	
+        margin-right:5px;
+        margin-bottom: 1em;
+}
+
+/*knappens skicka style*/
+.button {
+        background-color:#FFF8F8;
+        width:60px;
+        color: black;
+        height: 20px;
+}
+
+
+
+/*------------->KODEN FÖR ARTIKLAR I MOBIL VIEW<-----------------*/
+
+
+/*huvudcontainer ska ha column*/
+.syndicate {
+    display: flex;
+    flex-direction: column;
+}
+
+/*bilder i artiklar  egenskaper*/
+.syndicate img{
+width: 100%;
+align-self: center;
+height: auto;
+}
+  
+/*Här staylar jag artiklar med färger , border samt lägger till margin*/
+article {
+    background-color:#1A3B5B;
+    margin:0.3em;
+    border-bottom-style:solid;
+    border-bottom-color: purple;  
+    box-shadow:3px 4px 5px -1px rgba(0,0,0,0.46);  
+    font-size: 20px;
+    
+}
+
+/* färgar texten i articklar, samt ändrar padding/margin */
+article a,p {padding: 0.20em;}
+
+/*flexcards får ej vara mer än 100% bredda*/
+.flexcard{
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+} 
+
+.flexcard a {
+    color:white;
+}
+
+.flexcard header {
+font-size:120%;
+font-weight:700;
+margin-left: 2em;
+}
+
+.flexcard footer{
+display: flex;
+background-color: #18186D;
+font-size: 1em;
+letter-spacing: 1.5em; /*space mellan ikoner*/
+justify-content: center;  /*ikoner hamnar i mitten*/
+}
+
+/*sätter färgen på 4 och 3 dje flexcard*/
+.flexcard:nth-child(4n) { background: green;} 
+.flexcard:nth-child(3n) {background: #964CB4;}
+
+/*för att ikoner övanför bilden ska hamna i olika håll*/
+.flex2{
+justify-content: space-between;
+display: flex;
+margin-right: 1.5em;
+}
+
+/* style for  klass .blog_summary*/
+.blog_summary{
+ display: flex;   
+background:#54515D;
+}
+
+/*i första texten ska allt läggas i column*/
+.first_text{
+    flex-direction: column;
+    padding: 1em;
+}
+
+/*mellanrum på h1 och h2 elements*/
+h1,h2{
+     margin-right:10px; 
+}    
+
+/*rubrik på första texten fixas med baseline så att hamna på samma linje*/
+.text1{
+    display: flex;  
+    align-items: baseline; /*för att h1-h2 ska hamna på samma linje*/
+}
+
+.first_text{
+    display: flex;
+    margin-top: 0.3em;
+}
+
+/*footer style*/
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.next_article{
+    border-top-style:solid;
+    border-top-color: #898389;  
+    padding: 1em;
+}
+
+
+/*---------------->KODEN FÖR DESKTOP<--------------------------*/
+
+
+@media all and (min-width: 816px){
+
+    /*Tecknet för mobil menyn döljs på desktop*/
+     label{
+        display: none;
+      } 
+   
+    nav{
+        display: inline;
+    }
+
+    /*nav listor slyttads till höger och läggs i raden samt så tar bort wrapen så att dom inte flyttas till andra raden vid liten utrymme*/
+      nav ul{
+        flex-flow: nowrap;
+        flex-direction: row;
+        justify-content:flex-end;
+        border-bottom-style:solid; /*creates a bottom border on the desctop navigation only*/
+    }
+
+    /*runda kanter på nav listor*/    
+nav ul li {
+        border-top-left-radius:10px; /*creates the top rounded corners*/
+        border-top-right-radius:10px;	  
+}
+
+#nav-toggle:checked + #wrapper nav {
+    display: inline; 
+  }
+
+  /*position ska nu vara på höger sidan*/
+.logo {
+justify-content: flex-end;
+margin-right: 1em;
+}
+
+/*search ska hamna nu på höger sida*/
+.search-form {
+    order: 1;
+}
+
+.container{
+    display: flex;
+}
+
+/*ska ta 75%  av skärmen*/
+.syndicate {
+    flex-direction: row; 
+    flex-wrap:wrap; 
+    width: 75%;  
+}
+
+/*style för flexcards*/
+.flexcard{
+   max-width: 46%;
+   flex-direction: row;
+   margin-left: 2%;
+   margin-right: 2%;
+   margin-bottom:5%;
+} 
+
+.flexcard footer {
+    margin-top: auto;
+}
+.smile {
+    font-size: 40px;
+    background-color:red;
+}
+/*specifik style för 4de flexcard*/
+.flexcard:nth-child(4n) {
+    max-width: 100%;
+    flex-direction: column; 
+    margin-left:1em; 
+
+} 
+
+.blog_summary{
+width:25%;
+height: 80hv;
+color: white;
+order:-1;	
+padding-top:1em;
+}
+
+
+.next_article { 
+    width:100%; 
+    min-height:120px;
+    border-top-style:thick;
+    margin-top: 1em;
+}
+}
+

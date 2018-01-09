@@ -1,0 +1,14 @@
+.community {
+    text-align: center;
+}
+
+img{
+width: auto;
+max-width:300px;
+}
+
+@include respond-to("medium") { /*using my own breakingpoint variable from breakingpoints*/
+    img{
+    max-width: 170px;
+    }
+    }

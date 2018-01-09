@@ -1,0 +1,12 @@
+$blue1:#00ADEF; 
+$blue2:#54C7F3;
+$blue3:#037CA7;
+$blue4:#92C5D8;
+$silver:silver;
+
+$breakpoints: (
+  'small':  ( min-width:  40.000em ),
+  'medium': ( min-width:  48.000em ),
+  'large':  ( min-width: 62.000em ),
+  'wide':  ( min-width: 75.000em )
+) !default;

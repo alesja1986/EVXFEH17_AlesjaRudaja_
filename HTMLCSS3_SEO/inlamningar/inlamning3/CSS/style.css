@@ -1,0 +1,356 @@
+/* 
+*I den universiella selektorn använder jag av mig border-box för att beräkningen ska tas både
+inerhållet och padding/ram. 
+*Margin och padding är satta på 0 för att återställa webbläsarens margin/padding grundinställningar.
+*/
+*{  
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+/* 
+*I body anger jag vilka egenskaper ska sidans body ha. färgen,storlek samt positionen.
+*/
+  body{
+       width:100%;
+       max-width:50em; /*50em är lika 800px*/  
+       margin:auto;
+       -webkit-font-smoothing: antialiased;
+       font-family: 'Varela Round';
+       background-image: url("https://environmentalgeography.files.wordpress.com/2014/02/nature-3d-wallpaper-2560x1600-1005018.jpg");       
+}
+
+label{
+    color:greenyellow;
+    line-height: 40px;
+    font-size:2em;
+    cursor:pointer;
+  }
+
+ nav label {
+      font-size: 15px;
+      font-weight: bold;
+  }
+
+  /*Dold checkbox som aldrig visas*/
+#nav-toggle,#meny1,#meny2,#meny3,#meny4 {
+    display: none;
+  }
+  
+  /*Avänds för att dölja och visa menyn på mobilen*/ 
+  #nav-toggle:checked + #wrapper nav {
+    display:block; 
+    position:absolute; /*sätte absolut så att artiklar hamnar under naven och inte nedanför*/
+  }
+
+/*dölja menyer*/
+  #meny1:checked + #first  li a,
+  #meny2:checked + #second  li a,
+  #meny3:checked + #therd  li a,
+  #meny4:checked + #four li a {
+    display: none; 
+    position:absolute; /*sätte absolut så att artiklar hamnar under naven och inte nedanför*/
+}
+
+/*ta bord borders*/
+#meny1:checked + #first  li,
+ #meny2:checked + #second  li,
+ #meny3:checked + #therd  li,
+ #meny4:checked + #four li{
+ border:none;
+}
+
+
+/*Menyn döljs på mobilen som default*/
+  nav {
+    display: none;
+    text-transform: uppercase;
+    width:75%;
+    border:solid greenyellow;
+    border-width: 2px;
+    
+  }
+
+  nav a{
+	display:block;
+	font-weight: bold;
+	font-size:12pt;
+	color:greenyellow;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color:#120505;
+}
+
+/*lister ska ha bakrundsfärg samt så ett border*/
+nav ul li{
+  background:slateblue;
+  line-height: 35px;
+  padding-left:30px;
+  border-bottom-style:dotted;
+  border-bottom-color:white; 
+  border-bottom-width: 1px;
+}
+
+
+/*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul li ul li a{
+  color:#FFFF01;
+}
+
+/*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul ul li ul a{
+  color:white;
+}
+
+/*styling för span med färg,position*/
+nav  span {
+    border-radius: 5px;
+    background: #1A3B5B;
+    height: 30px; 
+    padding-left: 19px;
+    float:right;
+      
+}
+   nav li span {
+       padding-right: 19px;
+   }
+
+/*Här kommer kod för desktop */
+@media all and (min-width: 630px){
+
+
+    /*Tecknet för mobil menyn döljs på desktop*/
+     label{
+        display: none;
+      } 
+
+    /*Sätter nav label för block så att dom ska synas*/
+    nav label {
+      display: block;
+  }
+/*visa menyn*/
+  #meny1:checked + #first  li a,
+  #meny2:checked + #second  li a,
+  #meny3:checked + #therd  li a,
+  #meny4:checked + #four li a {
+    display: block; 
+    position:absolute; /*sätte absolut så att artiklar hamnar under naven och inte nedanför*/
+}
+/*lägg till border*/
+#meny1:checked + #first  li,
+ #meny2:checked + #second  li,
+ #meny3:checked + #therd  li,
+ #meny4:checked + #four li{
+    border-bottom-style:dotted;
+    border-bottom-color:white; 
+    border-bottom-width: 1px;
+}  
+
+/*Navigation får display block,placeras i center, samt ändra så att nav länkar ska placeras i mitten */
+nav{
+    text-align: center; 
+    height:40px;
+	width:804px;/*beror på vilken bredd man satt på de enskilda li, i detta fall är de 4 li*200px+margin-right på 1px*/ 
+	display:block;
+	margin:0 auto; /*centrar ul inuiti*/ 
+    /*opacity: 0.90; * vilken genomskilet ska menun ha*/
+    position: fixed;
+    box-shadow:3px 4px 5px -1px rgba(0,0,0,0.46);
+    border: none;
+  }
+
+  nav a{ 
+    font-size:18px;
+   }
+
+/*när man har muspekaren över rubrikerna i navigationen kommer texten förstoras och färgen ändras*/
+nav a:hover{ 
+    font-size:19px;
+    color: #FFFFFF;
+}
+
+/* fixar till så att listor lägger i rätt ställe*/
+nav ul li { 
+    padding: 0;
+    display:inline;
+    float:left;/*gör att den flyter till vänster (bättre att göra detta med flexbox)*/
+	width:200px;
+	height:40px;
+	line-height: 20px;
+    margin-right:1px;
+    padding-top:13px;     
+}
+
+/*styling för span med färg,position*/
+nav  span {
+    border-radius: 5px; 
+    height: 20px; 
+    padding-left: 19px;
+    float:right;
+}
+
+
+/* Tog bord decorationen (understräck) på länkar och
+ändrade färgen till vit när man hoovrar över dom*/
+a:link {
+    text-decoration: none;   
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color:white;   
+}
+a:active {
+    text-decoration: none; 
+}
+/*om man hoovrar äver underlistor ska färgen ändras samt ska dom ha lite shadow*/
+nav li li:hover{
+    background:cornflowerblue;
+    box-shadow:3px 4px 5px -1px rgba(0,0,0,0.46);
+}
+/*om man har muspekaren över huvudmenyer (nav) ska färgen ändras*/
+nav li:hover{
+     background-color:#427EBA;  
+}
+
+/*Nav länkar ska ha padding på 2em samt vara placerad i linjen*/
+nav ul ul  {
+    padding-top:7px; 
+}
+
+nav ul ul li{
+	position:relative; /* sätter positionen till vara relativt till sin behållare*/
+    display:none; /*Döljer undermenyna*/
+}
+
+/*Döljer submenyn i dropdown*/
+nav ul ul ul{
+    display:none;   
+}
+
+nav ul ul li:hover ul{
+	display:block;
+	position:absolute; /*sätter positionen till att absolute mot sin förälder som är satt till att vara relativt*/
+	width:200px; /*samma som ul li*/
+	left:200px; /*absolute position 200px ifrån sin förälder*/
+    top:0px; /*absolute position högst mot sin förälder*/ 
+  }
+
+/*Visar dropdown vid hover på ul li*/
+nav ul li:hover ul li{
+         display: block; 
+}
+
+/*ger runda hörn på dom sista li elemter*/
+   .navul_lista li:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    border-bottom: none;
+   }
+
+.navul_lista a{
+    padding-left: 20px;
+}
+} /*här Slutar kod för desktop navigation delen*/
+
+
+
+
+
+/* Här använder jag adjacent sibling selector som siktar på <h3> 
+som är direkt efter <h2>*/
+h2+h3{
+    color: greenyellow;
+  }
+
+  /*så att den hamnar under navigationen*/
+.logo{
+    padding-top: 2.7em;
+}
+
+/*Här staylar jag artiklar med färger , border samt lägger till margin*/
+article{ 
+         background-color:#1A3B5B;
+         margin: 0.7em;
+         border-bottom-style:solid;
+         border-bottom-color: purple;  
+         box-shadow:3px 4px 5px -1px rgba(0,0,0,0.46);  
+         font-size: 18px;         
+}
+
+/* färgar texten i articklar, samt ändrar padding/margin */
+article a,p {
+           color:whitesmoke;
+           padding: 0.20em;
+}
+
+article a,p:hover{
+    color:#E8E1E1; 
+}
+
+/* Staylar artiklarnas rubriker*/
+article h3 { 
+            text-align: center;
+             color: greenyellow;
+             font-family: 'Trocchi',
+             serif; font-size: 25px; 
+             font-weight: normal;            
+}
+
+/*börjar från nr 2 och var tredje artikel färgas */
+section article:nth-child(3n+2) {
+    background: slateblue; 
+}
+
+.next_article {
+    margin-left:1.5em;
+}
+
+/* descendant selectors
+Denna regel riktar sig enbart på li inom .blog_summary klassen, och inte andra 
+eventuella li inom html filen, och man läser av regeln från höger
+till vänster, så i detta fall, all <li> som befinner sig i en .blog_summary klassen
+Denna regel kommer inte påverka några andra <li> element på sidan.
+*/
+.blog_summary li{ margin: 0.2em;
+                  padding: 0.2em;               
+}
+
+/* child selectors 
+Regeln siktar sig in på alla spam som befinner sig i en klass som heter 
+.blog_summary  och gör texten gul färgad
+*/
+.blog_summary>span{
+    color:purple;
+  }
+
+  /*Psuedo selector
+  Alla länkar i klassen .blog_summary ska blir röda när man tar muspekaren över den*/
+.blog_summary a:hover {
+ color:red;
+}
+
+/* style for  klass .blog_summary*/
+.blog_summary{
+    text-align: center;
+    background:lightgray;
+    margin: 1em;
+}
+
+ /*Använder här The general sibling selector , klassens web färgen blir vit*/
+.tel ~ .web{
+   color:#262532;
+   font-weight: bold;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+}

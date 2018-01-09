@@ -1,0 +1,24 @@
+.bg_block{
+    background-image: url("../images/rockies_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: thick solid#000000;
+    border-width: 10px;
+    margin: 0.3em;
+  }
+
+
+.bg_block :last-child{
+    color:white;
+}
+
+.bg_block p{
+ margin-top: 0.3em;
+ border-bottom: thick solid#000000;
+ border-width:1px;
+ margin: 0.4em;
+}
+
+.bg_block h1{
+    margin: 0.4em; 
+}
