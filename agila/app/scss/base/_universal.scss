@@ -1,6 +1,7 @@
 body{
     margin: 0 auto;
-    padding: 0;
+    padding: 0; 
+    background-color:map-get($colors, beages );
 }
 
 li{
@@ -16,11 +17,4 @@ a{
     font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0 auto;
     padding: 0;
-}
-
-h2{
-    margin: 1.8em;
-}
-h4{
-    margin: 1em;
 }

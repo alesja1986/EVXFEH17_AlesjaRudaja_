@@ -1,0 +1,73 @@
+main{
+    display: grid;
+    max-width: 1200px;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    background-color:map-get($colors, bright);
+    text-align: center;
+}
+
+#map{
+    max-width: 500px;
+    grid-column:1/2;
+    grid-row:1/2;
+    margin: 2em;
+}
+
+form{
+    justify-content: flex-end;
+    grid-column:2/3;
+    grid-row:1/2;
+    margin-right: 10%;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+
+.button1,.button2{
+    background-color:map-get($colors, coffee);
+    width: 200px;
+    height: 50px;
+    color:map-get($colors, bright);
+    font-size: 30px;
+}
+.button :last-child{
+    width: 10px;
+}
+.input {
+    width: 185px;
+    height: 30px;
+}
+.button2{
+    width: 40px;
+    height: 35px;
+    font-size: 20px;
+}
+
+#hund{
+    grid-column:1/2;
+    grid-row:2/2; 
+    margin: 2em;
+    width: 500px;
+}
+
+.beskrivning{
+    grid-column:2/3;
+    grid-row:2/2;  
+    margin: 2em; 
+}
+
+#hund1{
+    grid-column:1/2;
+    grid-row:3/3; 
+    width: 500px;
+
+}
+
+.beskrivning1{
+    grid-column:2/3;
+    grid-row:3/3;  
+    margin: 2em; 
+}
+
+    
